@@ -64,6 +64,16 @@ questions_data = [
     ("Programming Logic & Analytic Thinking", "Python is a compiled language.", "True/False", "", "False", "You are Correct! Python is an interpreted language.", "Incorrect. The statement is false."),
     ("Programming Logic & Analytic Thinking", "A 'for' loop in Python is used to execute a block of code only if a condition is true.", "True/False", "", "False", "Correct! A 'for' loop in Python is used to iterate over a sequence of items.", "Incorrect. The statement is false as it is used to iterate over a sequence of items."),
     # Category 5
+    ("Topics in British Literature", "Who wrote 'Pride and Prejudice'?", "MCQ", "A) Charles Dickens\nB) Jane Austen\nC) William Shakespeare\nD) Emily Brontë", "B", "You are Correct! 'Pride and Prejudice' was written by Jane Austen.", "Incorrect. The correct answer is Jane Austen."),
+    ("Topics in British Literature", "Which Shakespeare play features the character Hamlet?", "MCQ", "A) Romeo and Juliet\nB) Macbeth\nC) Hamlet\nD) Othello","C","yes, ironically Hamlet is featured in the play 'Hamlet'.","Incorrect. The correct answer is Hamlet as he is featured in his own self-titled play."),
+    ("Topics in British Literature", "Who wrote the poem 'Paradise Lost'?", "MCQ", "A) John Milton\nB) Geoffrey Chaucer\nC) William Wordsworth\nD) Samuel Taylor Coleridge","A","You are Correct! 'Paradise Lost' was written by John Milton.","Incorrect. The correct author is John Milton."),
+    ("Topics in British Literature", "What is the title of Emily Brontë's only novel?", "MCQ", "A) Wuthering Heights\nB) Jane Eyre\nC) Middlemarch\nD) Sense and Sensibility","A","You are right as Emily Brontë's only novel is 'Wuthering Heights'.","Incorrect. The correct novel is Wuthering Heights."),
+    ("Topics in British Literature", "Who is the author of 'Oliver Twist'?", "MCQ", "A) Charles Dickens\nB) Charlotte Brontë\nC) Daphne du Maurier\nD) George Eliot","A","You chose correctly as 'Oliver Twist' was written by Charles Dickens.","Incorrect. The correct author is Charles Dickens."),
+    ("Topics in British Literature", "What is the title of William Wordsworth's autobiographical poem?", "Short Answer", "", "The Prelude","You are correct as it is titled 'The Prelude'","That's incorrect. The correct answer is The Prelude."),
+    ("Topics in British Literature", "Who wrote the poem 'The Waste Land'?", "Short Answer", "", "T.S. Eliot","You are Right! T.S. Eliot is the author of 'The Waste Land'","Wrong. The correct answer is T.S. Eliot."),
+    ("Topics in British Literature", "What is the title of George Orwell's dystopian novel published in 1949?", "Short Answer", "", "1984","You are correct, it is titled 1984, yet published in 1949 ","Incorrect. The correct answer is 1984."),
+    ("Topics in British Literature", "Mary Shelley is the author of 'Frankenstein'.", "True/False", "", "True", "Mary Shelley is indeed the author of 'Frankenstein'.", "Incorrect. The statement is true as she is the author of 'Frankenstein'."),
+    ("Topics in British Literature", "Shakespeare's play 'Romeo and Juliet' is a tragedy.", "True/False", "", "True", "Correct! 'Romeo and Juliet' is classified as a tragedy.", "Incorrect. The statement is true as it is classified as a tragedy by credible critics.")
 ]
 
 # Insert the sample data into the database
