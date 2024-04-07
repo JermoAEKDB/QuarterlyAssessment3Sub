@@ -1,21 +1,30 @@
 import sqlite3
 
-# Database connection
-conn = sqlite3.connect('quiz_questions.db')
-
-
-c = conn.cursor()
-
-#table creation for storing questions
-c.execute('''CREATE TABLE IF NOT EXISTS questions (
-             id INTEGER PRIMARY KEY,
-             category TEXT,
-             question TEXT,
-             question_type TEXT,
-             options TEXT,
-             answer TEXT,
-             feedback_correct TEXT,
-             feedback_incorrect TEXT)''')
+class QuizDatabase:
+    def __init__(self, db_name='quiz_questions.db'):
+        self.db_name = db_name
+        self.conn = sqlite3.connect(self.db_name)
+        self.cursor = self.conn.cursor()
+    
+    def create_table(self):
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS questions (
+                             id INTEGER PRIMARY KEY,
+                             category TEXT,
+                             question TEXT,
+                             question_type TEXT,
+                             options TEXT,
+                             answer TEXT,
+                             feedback_correct TEXT,
+                             feedback_incorrect TEXT)''')
+        self.conn.commit()
+    
+    def insert_questions(self, questions_data):
+        self.cursor.executemany('''INSERT INTO questions (category, question, question_type, options, answer, feedback_correct, feedback_incorrect)
+                          VALUES (?, ?, ?, ?, ?, ?, ?)''', questions_data)
+        self.conn.commit()
+    
+    def close_connection(self):
+        self.conn.close()
 
 # Sample data of questions for each category
 questions_data = [
@@ -76,12 +85,13 @@ questions_data = [
     ("Topics in British Literature", "Shakespeare's play 'Romeo and Juliet' is a tragedy.", "True/False", "", "True", "Correct! 'Romeo and Juliet' is classified as a tragedy.", "Incorrect. The statement is true as it is classified as a tragedy by credible critics.")
 ]
 
-# Insert the sample data into the database
-c.executemany('''INSERT INTO questions (category, question, question_type, options, answer, feedback_correct, feedback_incorrect)
-                  VALUES (?, ?, ?, ?, ?, ?, ?)''', questions_data)
+# Instance Creation
+quiz_db = QuizDatabase()
 
-# Commit changes and close the connection
-conn.commit()
-conn.close()
+# Table Creation
+quiz_db.create_table()
 
+# Insertion of sample data into the database
+quiz_db.insert_questions(questions_data)
 
+quiz_db.close_connection()
