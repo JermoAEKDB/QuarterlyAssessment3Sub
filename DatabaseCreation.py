@@ -30,22 +30,6 @@ questions_data = [
     ("Handgun Familiarity & Safety", "What ammunition have we been shooting in class for demonstrations as it is the common ammunition for competitive handgun competitions?", "Short Answer", "", ".22", "Yes! .22 is commonly used by competitors for precision and accurate competitions along with in class.", "We use .22 ammunition. Thus, you are incorrect as .22 is also commonly used for competitions."),
     ("Handgun Familiarity & Safety","What action is the Glock we use in class for demonstrations?","Short Answer","","Strike-Fire","Yes it is a strike fire Glock as it implements the hammer to strike upon the striker on ammunition and doesn't require the hammer to be cocked","You are incorrect as it is a Strike-Fire Glock that can be shot without the hammer being cocked."),
     ("Handgun Familiarity & Safety","Where is the ammunition fed in a handgun?","Short Answer","","Chamber","The ammunition is fed into the chamber of the handgun as it is a part of the barrel.","This is incorrect as it is fed into the chamber of the handgun as it is a part of the barrel."),
-    # Category 2
-    ("Category 2", "Question 1", "MCQ", "A) Option A\nB) Option B\nC) Option C\nD) Option D", "B", "Correct feedback", "Incorrect feedback"),
-    ("Category 2", "Question 2", "True/False", "", "False", "Correct feedback", "Incorrect feedback"),
-    ("Category 2", "Question 3", "Short Answer", "", "Answer", "Correct feedback", "Incorrect feedback"),
-    # Category 3
-    ("Category 3", "Question 1", "MCQ", "A) Option A\nB) Option B\nC) Option C\nD) Option D", "C", "Correct feedback", "Incorrect feedback"),
-    ("Category 3", "Question 2", "True/False", "", "True", "Correct feedback", "Incorrect feedback"),
-    ("Category 3", "Question 3", "Short Answer", "", "Answer", "Correct feedback", "Incorrect feedback"),
-    # Category 4
-    ("Category 4", "Question 1", "MCQ", "A) Option A\nB) Option B\nC) Option C\nD) Option D", "D", "Correct feedback", "Incorrect feedback"),
-    ("Category 4", "Question 2", "True/False", "", "False", "Correct feedback", "Incorrect feedback"),
-    ("Category 4", "Question 3", "Short Answer", "", "Answer", "Correct feedback", "Incorrect feedback"),
-    # Category 5
-    ("Category 5", "Question 1", "MCQ", "A) Option A\nB) Option B\nC) Option C\nD) Option D", "A", "Correct feedback", "Incorrect feedback"),
-    ("Category 5", "Question 2", "True/False", "", "True", "Correct feedback", "Incorrect feedback"),
-    ("Category 5", "Question 3", "Short Answer", "", "Answer", "Correct feedback", "Incorrect feedback")
 ]
 
 # Insert the sample data into the database
