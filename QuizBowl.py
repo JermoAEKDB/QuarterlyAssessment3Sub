@@ -22,6 +22,9 @@ class QuizApp:
         self.root = tk.Tk()
         self.root.title("Select Quiz Category")
 
+        self.root.geometry("400x200")  # Set window width and height
+        self.center_window(self.root)
+
         tk.Label(self.root, text="Select Category:").pack()
         self.category_var = tk.StringVar(self.root)
         self.category_var.set(self.categories[0])  # Default to first category
@@ -49,6 +52,9 @@ class QuizApp:
         self.quiz_root = tk.Tk()
         self.quiz_root.title("Quiz")
 
+        self.quiz_root.geometry("800x400")  # Set window width and height
+        self.center_window(self.quiz_root)
+
         self.current_question = 0
         self.questions = questions
         random.shuffle(self.questions)
@@ -62,8 +68,11 @@ class QuizApp:
         self.quiz_root = tk.Tk()
         self.quiz_root.title("Question {}".format(self.current_question + 1))
 
+        self.quiz_root.geometry("800x400")  # Set window width and height
+        self.center_window(self.quiz_root)
+
         question = self.questions[self.current_question]
-        tk.Label(self.quiz_root, text=question[2]).pack()  # Display question
+        tk.Label(self.quiz_root, text=question[2], wraplength=700).pack()  # Display question with wrapping
 
         if question[3] == "MCQ":
             options = question[4].split("\n")
@@ -74,7 +83,7 @@ class QuizApp:
             tk.Label(entry_frame, text="Your Answer:").pack(side=tk.LEFT)
             tk.Entry(entry_frame, textvariable=self.mcq_answer, width=5).pack(side=tk.LEFT)
         elif question[3] == "True/False":
-            tk.Label(self.quiz_root, text="True/False").pack()
+            tk.Label(self.quiz_root, text="True/False: True or False").pack()
             self.tf_answer = tk.StringVar()
             entry_frame = tk.Frame(self.quiz_root)
             entry_frame.pack()
@@ -127,16 +136,28 @@ class QuizApp:
             next_button = tk.Button(self.quiz_root, text="Next Question", command=self.display_question)
             next_button.pack()
         else:
-            score_label = tk.Label(self.quiz_root, text="Your Score: {}/{}".format(self.score, len(self.questions)))
-            score_label.pack()
+            self.show_scoreboard()
 
-            finish_button = tk.Button(self.quiz_root, text="Finish Quiz", command=self.finish_quiz)
-            finish_button.pack()
+    def show_scoreboard(self):
+        self.quiz_root.destroy()  # Destroy quiz window
 
-    def finish_quiz(self):
-        self.quiz_root.destroy()
-        messagebox.showinfo("Quiz Complete", "Congratulations! You have completed the quiz.")
+        scoreboard_root = tk.Tk()
+        scoreboard_root.title("Quiz Scoreboard")
+
+        self.center_window(scoreboard_root)
+
+        tk.Label(scoreboard_root, text="Quiz Complete! Your Score: {}/{}".format(self.score, len(self.questions))).pack()
+
+        scoreboard_root.mainloop()
+
+    def center_window(self, window):
+        window.update_idletasks()
+        width = window.winfo_reqwidth() + 600  # Add extra width
+        height = window.winfo_reqheight()
+        x = (window.winfo_screenwidth() // 2) - (width // 2)
+        y = (window.winfo_screenheight() // 2) - (height // 2)
+        window.geometry('{}x{}+{}+{}'.format(width, height, x, y))
 
 if __name__ == "__main__":
-    app = QuizApp()
-    app.start()
+    quiz_app = QuizApp()
+    quiz_app.start()
